@@ -34,9 +34,12 @@ console.log(arrayCasuale());
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
 const arrNumeriPari = [20,18,7,73,24, 2]
-const numeriPari = arrNumeriPari.filter(numero => numero%2===0);
-console.log("Numeri pari: ", numeriPari)
 
+const numeriPari = function(arr)
+{
+  return arr.filter(numero => numero%2===0);
+}
+console.log(numeriPari(arrNumeriPari))
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
@@ -65,6 +68,12 @@ console.log("La somma dei numeri con reduce è: ", SommaNumeriReduce)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
 
+const arrMaps = [10,20,30,40]
+
+const newArrMap = function(arr, num){ 
+  return arr.map(numero => numero * num)
+}
+console.log(newArrMap(arrMaps, 2))
 
 
 
@@ -82,7 +91,15 @@ console.log(lunghezzeStringhe)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
 
-
+const numDispari = function(){
+  let arrDispari = []
+  for (let i = 0;i<100; i++){
+    if( i%2 !=0){
+    arrDispari.push(i)
+  }}
+  return arrDispari
+}
+console.log(numDispari())
 
 
 
@@ -283,3 +300,8 @@ console.log(searchMovie("tt4154796"))
 */
 
 
+const indexYear = function(year){
+ let nameMovie = movies.findIndex(movie => parseInt(movie.Year) === year)
+ return movies[nameMovie]
+}
+console.log(indexYear(2018))
